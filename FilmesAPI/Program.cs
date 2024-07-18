@@ -5,7 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Configures the connection with database
 var connectionString = builder.Configuration.GetConnectionString("FilmeConnection");
-builder.Services.AddDbContext<FilmesContext>(opts => opts.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+builder.Services.AddDbContext<FilmesContext>(opts => opts.UseLazyLoadingProxies().UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Configures the auto mapper from Filme class to Filme DTOs
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
