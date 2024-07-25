@@ -1,0 +1,17 @@
+Abre os Bancos de Dados
+show databases;
+
+Seleciona o banco de dados filme
+use filme;
+
+Mostra as tabelas do banco de dados
+show tables; 
+
+Seleciona todos os dados da tabela filme
+SELECT * FROM filmes;
+
+Exclui uma coluna de uma tabela
+alter table sessoes drop column CinemaId;
+
+Comando para excluir o banco de dados filme
+drop database filme;
